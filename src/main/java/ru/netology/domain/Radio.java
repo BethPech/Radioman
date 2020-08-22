@@ -25,18 +25,18 @@ public class Radio {
 
 
     public void switchNextRadioStation() {
-        if (radioStation < maxRadioStation) {
+        if (radioStation < maxRadioStation)
             radioStation++;
-        } else if (radioStation == maxRadioStation) {
+        if (radioStation == maxRadioStation) {
             radioStation = getMinRadioStation();
 
         }
     }
 
     public void switchPrefRadioStation() {
-        if (radioStation > minRadioStation) {
+        if (radioStation > minRadioStation)
             radioStation--;
-        } else if (radioStation == minRadioStation) {
+        if (radioStation == minRadioStation) {
             radioStation = getMaxRadioStation();
         }
     }
