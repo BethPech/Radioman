@@ -6,73 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
 
-    @Test
-    void shouldSwitchNext() {
-        Radio Radio = new Radio();
-        assertEquals(0, Radio.getRadioStation());
-        Radio.setMinRadioStation(0);
-        Radio.setMaxRadioStation(9);
-        Radio.setRadioStation(0);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(-1);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(0);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(1);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(2);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(3);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(4);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(5);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(6);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(7);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(8);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(9);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(10);
-        Radio.switchNextRadioStation();
-        Radio.setRadioStation(11);
-        Radio.switchNextRadioStation();
-    }
-
-    @Test
-    void shouldSwitchPrev() {
-        Radio Radio = new Radio();
-        assertEquals(0, Radio.getRadioStation());
-        Radio.setRadioStation(0);
-        Radio.setMinRadioStation(0);
-        Radio.setMaxRadioStation(9);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(-1);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(0);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(1);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(2);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(3);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(4);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(5);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(6);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(7);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(8);
-        Radio.switchPrefRadioStation();
-        Radio.setMaxRadioStation(10);
-        Radio.switchPrefRadioStation();
-    }
 
     @Test
     void shouldIncreaseVolume() {
@@ -154,6 +87,8 @@ public class RadioTest {
     void shouldDoAnythingWithRadioStation() {
         Radio Radio = new Radio();
         assertEquals(10, Radio.getRadioStation());
+        Radio.setMinRadioStation(0);
+        Radio.setMaxRadioStation(10);
         Radio.setRadioStation(-1);
         Radio.switchNextRadioStation();
         Radio.setRadioStation(0);
@@ -213,7 +148,7 @@ public class RadioTest {
     void shouldDoAnythingWithVolume(){
         Radio Radio = new Radio();
         Radio.setRadioStation(0);
-        Radio.setMaxVolume(10);
+        Radio.setMaxVolume(100);
         Radio.setMinVolume(0);
         Radio.setVolume(0);
         Radio.increaseVolume();
@@ -240,6 +175,8 @@ public class RadioTest {
         Radio.setVolume(10);
         Radio.increaseVolume();
         Radio.setVolume(100);
+        Radio.increaseVolume();
+        Radio.setVolume(101);
         Radio.increaseVolume();
         Radio.setRadioStation(-1);
         Radio.switchNextRadioStation();
