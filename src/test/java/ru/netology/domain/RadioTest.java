@@ -9,7 +9,7 @@ public class RadioTest {
     @Test
     void shouldSwitchNext() {
         Radio Radio = new Radio();
-        assertEquals(0,Radio.getRadioStation());
+        assertEquals(0, Radio.getRadioStation());
         Radio.setMinRadioStation(0);
         Radio.setMaxRadioStation(9);
         Radio.setRadioStation(0);
@@ -41,10 +41,11 @@ public class RadioTest {
         Radio.setRadioStation(11);
         Radio.switchNextRadioStation();
     }
+
     @Test
-    void shouldSwitchPrev(){
+    void shouldSwitchPrev() {
         Radio Radio = new Radio();
-        assertEquals(0,Radio.getRadioStation());
+        assertEquals(0, Radio.getRadioStation());
         Radio.setRadioStation(0);
         Radio.setMinRadioStation(0);
         Radio.setMaxRadioStation(9);
@@ -72,8 +73,9 @@ public class RadioTest {
         Radio.setMaxRadioStation(10);
         Radio.switchPrefRadioStation();
     }
+
     @Test
-    void shouldIncreaseVolume(){
+    void shouldIncreaseVolume() {
         Radio Radio = new Radio();
         assertEquals(0, Radio.getVolume());
         assertEquals(0, Radio.getMinVolume());
@@ -108,8 +110,9 @@ public class RadioTest {
         Radio.setVolume(11);
         Radio.increaseVolume();
     }
+
     @Test
-    void shouldDecreaseVolume(){
+    void shouldDecreaseVolume() {
         Radio Radio = new Radio();
         assertEquals(0, Radio.getVolume());
         assertEquals(0, Radio.getMinVolume());
@@ -146,4 +149,65 @@ public class RadioTest {
         Radio.setVolume(11);
         Radio.decreaseVolume();
     }
+
+    @Test
+    void shouldDoAnything() {
+        Radio Radio = new Radio();
+        assertEquals(10, Radio.getRadioStation());
+        Radio.setRadioStation(-1);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(0);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(1);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(2);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(3);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(4);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(5);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(6);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(7);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(8);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(9);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(10);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(11);
+        Radio.switchNextRadioStation();
+        Radio.setRadioStation(0);
+        Radio.setMinRadioStation(0);
+        Radio.setMaxRadioStation(9);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(-1);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(0);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(1);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(2);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(3);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(4);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(5);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(6);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(7);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(8);
+        Radio.switchPrefRadioStation();
+        Radio.setMaxRadioStation(10);
+        Radio.switchPrefRadioStation();
+
+    }
+
+
 }
