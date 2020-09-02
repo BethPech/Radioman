@@ -9,10 +9,7 @@ public class RadioTest {
 
     @Test
     void shouldIncreaseVolume() {
-        Radio Radio = new Radio();
-        assertEquals(0, Radio.getVolume());
-        assertEquals(0, Radio.getMinVolume());
-        assertEquals(0, Radio.getMaxVolume());
+        Radio Radio = new Radio(10,10,0,0,0,0);
         Radio.setRadioStation(0);
         Radio.setMaxVolume(10);
         Radio.setMinVolume(0);
@@ -46,10 +43,7 @@ public class RadioTest {
 
     @Test
     void shouldDecreaseVolume() {
-        Radio Radio = new Radio();
-        assertEquals(0, Radio.getVolume());
-        assertEquals(0, Radio.getMinVolume());
-        assertEquals(0, Radio.getMaxVolume());
+        Radio Radio = new Radio(10,10,0,0,0,0);
         Radio.setRadioStation(0);
         Radio.setMaxVolume(10);
         Radio.setMinVolume(0);
@@ -85,8 +79,7 @@ public class RadioTest {
 
     @Test
     void shouldDoAnythingWithRadioStation() {
-        Radio Radio = new Radio();
-        assertEquals(10, Radio.getRadioStation());
+        Radio Radio = new Radio(10,10,0,0,0,100);
         Radio.setMinRadioStation(0);
         Radio.setMaxRadioStation(10);
         Radio.setRadioStation(-1);
@@ -146,7 +139,7 @@ public class RadioTest {
 
     @Test
     void shouldDoAnythingWithVolume(){
-        Radio Radio = new Radio();
+        Radio Radio = new Radio(10,10,0,0,0,100);
         Radio.setRadioStation(0);
         Radio.setMaxVolume(100);
         Radio.setMinVolume(0);
